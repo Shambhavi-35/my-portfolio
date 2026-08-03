@@ -88,7 +88,7 @@ section{position:relative;z-index:1}
 .stat-lbl{font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em}
 .skills-masonry{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
 .sk-card{background:var(--glass);border:1px solid var(--border);border-radius:20px;padding:1.75rem;position:relative;overflow:hidden;transition:transform 0.3s,border-color 0.3s,box-shadow 0.3s;backdrop-filter:blur(20px)}
-.sk-card::before{content:'';position:absolute;inset:0;border-radius:20px;background:radial-gradient(circle at 0% 0%,rgba(108,71,255,0.08),transparent 60%);opacity:0;transition:opacity 0.3s}
+.sk-card::before{content:'';position:absolute;inset:0;border-radius:20px;background:radial-gradient(circle at 0% 0%,rgba(108,71,255,0.08),transparent 60%);opacity:0;transition:opacity 0.3s;pointer-events:none}
 .sk-card:hover{transform:translateY(-6px) scale(1.01);border-color:var(--border2);box-shadow:0 20px 60px rgba(0,0,0,0.4)}.sk-card:hover::before{opacity:1}
 .sk-top{display:flex;align-items:center;gap:12px;margin-bottom:1.25rem}
 .sk-icon{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
@@ -106,7 +106,7 @@ section{position:relative;z-index:1}
 #projects{background:var(--bg1)}
 .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
 .proj-card{background:var(--glass);border:1px solid var(--border);border-radius:24px;padding:2rem;position:relative;overflow:hidden;transition:transform 0.35s,border-color 0.35s,box-shadow 0.35s;backdrop-filter:blur(20px);display:flex;flex-direction:column}
-.proj-card::after{content:'';position:absolute;inset:0;border-radius:24px;background:linear-gradient(135deg,rgba(108,71,255,0.06),rgba(255,107,157,0.04));opacity:0;transition:opacity 0.4s}
+.proj-card::after{content:'';position:absolute;inset:0;border-radius:24px;background:linear-gradient(135deg,rgba(108,71,255,0.06),rgba(255,107,157,0.04));opacity:0;transition:opacity 0.4s;pointer-events:none}
 .proj-card:hover{transform:translateY(-8px);border-color:rgba(167,139,250,0.35);box-shadow:0 30px 80px rgba(0,0,0,0.5),inset 0 1px 0 rgba(255,255,255,0.05)}
 .proj-card:hover::after{opacity:1}
 .proj-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.25rem}
@@ -135,13 +135,20 @@ section{position:relative;z-index:1}
 #certs{background:var(--bg2)}
 .certs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
 .cert-card{display:flex;align-items:center;gap:1.25rem;background:var(--glass);border:1px solid var(--border);border-radius:18px;padding:1.5rem;text-decoration:none;transition:transform 0.25s,border-color 0.25s,box-shadow 0.25s;backdrop-filter:blur(20px);position:relative;overflow:hidden}
-.cert-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--amber),transparent);opacity:0;transition:opacity 0.3s}
+.cert-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--amber),transparent);opacity:0;transition:opacity 0.3s;pointer-events:none}
 .cert-card:hover{transform:translateY(-4px);border-color:rgba(245,158,11,0.3);box-shadow:0 16px 50px rgba(0,0,0,0.4)}.cert-card:hover::before{opacity:1}
 .cert-emblem{width:50px;height:50px;border-radius:14px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:1.4rem;background:linear-gradient(135deg,rgba(245,158,11,0.15),rgba(245,158,11,0.05));border:1px solid rgba(245,158,11,0.25)}
 .cert-title{color:var(--text);font-size:0.95rem;font-weight:500;margin-bottom:4px}
 .cert-org{font-size:0.75rem;color:var(--amber);font-family:'JetBrains Mono',monospace;letter-spacing:0.06em}
 .cert-arrow{margin-left:auto;color:var(--muted);font-size:1.1rem;transition:transform 0.25s,color 0.25s}
 .cert-card:hover .cert-arrow{transform:translate(4px,-4px);color:var(--amber)}
+#education{background:linear-gradient(180deg,var(--bg2),var(--bg1))}
+.edu-card{border:1px solid var(--border);border-radius:24px;padding:2.5rem;background:var(--glass);backdrop-filter:blur(20px);display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap;position:relative;overflow:hidden}
+.edu-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 100% 0%,rgba(108,71,255,0.1),transparent 60%);pointer-events:none}
+.edu-degree{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:400;margin-bottom:0.5rem}
+.edu-school{font-size:0.95rem;color:var(--v3);font-weight:500;margin-bottom:0.35rem}
+.edu-loc{font-size:0.82rem;color:var(--muted)}
+.edu-time{font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:var(--teal);border:1px solid rgba(0,212,170,0.25);padding:8px 18px;border-radius:100px;white-space:nowrap;background:rgba(0,212,170,0.06)}
 #contact{background:linear-gradient(180deg,var(--bg2),var(--bg))}
 .contact-hero{text-align:center;margin-bottom:4rem}
 .contact-hero p{font-size:1.05rem;color:var(--muted);line-height:1.8;max-width:520px;margin:0 auto 3rem}
@@ -176,6 +183,7 @@ footer{text-align:center;padding:2.5rem;border-top:1px solid var(--border);posit
   .skills-masonry{grid-template-columns:1fr 1fr}.proj-grid{grid-template-columns:1fr}
   .stats-strip{grid-template-columns:1fr 1fr}.certs-grid{grid-template-columns:1fr}
   .contact-grid{grid-template-columns:1fr}.github-inner{grid-template-columns:1fr}
+  .edu-card{flex-direction:column;text-align:center}
   .chip-1,.chip-2,.chip-3{display:none}.s-label::before{display:none}
 }
 </style>
@@ -193,8 +201,8 @@ footer{text-align:center;padding:2.5rem;border-top:1px solid var(--border);posit
   <ul class="nav-links">
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
-    <li><a href="#github">GitHub</a></li>
     <li><a href="#certs">Certs</a></li>
+    <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -203,8 +211,8 @@ footer{text-align:center;padding:2.5rem;border-top:1px solid var(--border);posit
   <div class="hero-text">
     <span class="hero-eyebrow"><span class="dot-live"></span>Available for opportunities</span>
     <h1 class="hero-name"><span class="outline">Shambhavi</span><br><em>Shiragond</em></h1>
-    <p class="hero-role"><span>// </span>Android Developer &nbsp;&middot;&nbsp; Java &nbsp;&middot;&nbsp; Kotlin &nbsp;&middot;&nbsp; Firebase</p>
-    <p class="hero-desc">CS student crafting real-world Android applications with a passion for backend systems and blockchain technology. Building impactful mobile experiences one app at a time.</p>
+    <p class="hero-role"><span>// </span>Aspiring Android Developer &nbsp;&middot;&nbsp; Java &nbsp;&middot;&nbsp; Kotlin &nbsp;&middot;&nbsp; Firebase</p>
+    <p class="hero-desc">Computer Science & Engineering student in Bengaluru, learning and exploring Android development — from Java, Kotlin, and Android Studio to Firebase integration and Material Design, with a growing curiosity for AI and remote sensing.</p>
     <div class="hero-cta">
       <a href="https://github.com/Shambhavi-35" target="_blank" class="btn-glow">View GitHub</a>
       <a href="mailto:shambhavishiragond223@gmail.com" class="btn-outline">Get In Touch</a>
@@ -234,19 +242,19 @@ footer{text-align:center;padding:2.5rem;border-top:1px solid var(--border);posit
 <section id="skills">
   <div class="section-wrap">
     <div class="stats-strip reveal">
-      <div class="stat-item"><span class="stat-num">3+</span><span class="stat-lbl">Projects</span></div>
-      <div class="stat-item"><span class="stat-num">4</span><span class="stat-lbl">Certifications</span></div>
-      <div class="stat-item"><span class="stat-num">7+</span><span class="stat-lbl">Technologies</span></div>
+      <div class="stat-item"><span class="stat-num">6+</span><span class="stat-lbl">Repositories</span></div>
+      <div class="stat-item"><span class="stat-num">5</span><span class="stat-lbl">Certifications</span></div>
+      <div class="stat-item"><span class="stat-num">2027</span><span class="stat-lbl">Grad Year</span></div>
       <div class="stat-item"><span class="stat-num">&#8734;</span><span class="stat-lbl">Curiosity</span></div>
     </div>
     <p class="s-label reveal">01 &mdash; Technical skills</p>
     <h2 class="s-title reveal">What I <em>Build With</em></h2>
     <div class="skills-masonry">
-      <div class="sk-card reveal"><div class="sk-top"><div class="sk-icon sk-icon-v">&#128241;</div><span class="sk-name">Mobile Dev</span></div><div class="sk-pills"><span class="pill pill-v">Android</span><span class="pill pill-v">Kotlin</span><span class="pill pill-v">Java</span><span class="pill pill-v">XML Layouts</span></div></div>
-      <div class="sk-card reveal"><div class="sk-top"><div class="sk-icon sk-icon-t">&#128293;</div><span class="sk-name">Backend</span></div><div class="sk-pills"><span class="pill pill-t">Firebase</span><span class="pill pill-t">Node.js</span><span class="pill pill-t">REST APIs</span><span class="pill pill-t">PHP</span></div></div>
-      <div class="sk-card reveal"><div class="sk-top"><div class="sk-icon sk-icon-r">&#127760;</div><span class="sk-name">Web</span></div><div class="sk-pills"><span class="pill pill-r">HTML</span><span class="pill pill-r">CSS</span><span class="pill pill-r">JavaScript</span></div></div>
-      <div class="sk-card reveal"><div class="sk-top"><div class="sk-icon sk-icon-v">&#9939;</div><span class="sk-name">Concepts</span></div><div class="sk-pills"><span class="pill pill-v">DSA</span><span class="pill pill-v">Blockchain</span><span class="pill pill-v">Realtime DB</span></div></div>
-      <div class="sk-card reveal"><div class="sk-top"><div class="sk-icon sk-icon-a">&#128736;</div><span class="sk-name">Tools</span></div><div class="sk-pills"><span class="pill pill-a">Git</span><span class="pill pill-a">GitHub</span><span class="pill pill-a">Android Studio</span></div></div>
+      <div class="sk-card reveal"><div class="sk-top"><div class="sk-icon sk-icon-v">&#128241;</div><span class="sk-name">Mobile Dev</span></div><div class="sk-pills"><span class="pill pill-v">Android Studio</span><span class="pill pill-v">Kotlin</span><span class="pill pill-v">Java</span><span class="pill pill-v">XML Layouts</span><span class="pill pill-v">Material Design</span></div></div>
+      <div class="sk-card reveal"><div class="sk-top"><div class="sk-icon sk-icon-t">&#128293;</div><span class="sk-name">Backend</span></div><div class="sk-pills"><span class="pill pill-t">Firebase</span><span class="pill pill-t">MySQL</span><span class="pill pill-t">PHP</span></div></div>
+      <div class="sk-card reveal"><div class="sk-top"><div class="sk-icon sk-icon-r">&#127760;</div><span class="sk-name">Web</span></div><div class="sk-pills"><span class="pill pill-r">HTML</span><span class="pill pill-r">JavaScript</span><span class="pill pill-r">TypeScript</span></div></div>
+      <div class="sk-card reveal"><div class="sk-top"><div class="sk-icon sk-icon-v">&#9939;</div><span class="sk-name">Concepts</span></div><div class="sk-pills"><span class="pill pill-v">DSA</span><span class="pill pill-v">OpenCV</span><span class="pill pill-v">Blockchain</span></div></div>
+      <div class="sk-card reveal"><div class="sk-top"><div class="sk-icon sk-icon-a">&#128736;</div><span class="sk-name">Tools & Platform</span></div><div class="sk-pills"><span class="pill pill-a">Git</span><span class="pill pill-a">GitHub</span><span class="pill pill-a">Android Studio</span><span class="pill pill-a">Google Cloud</span></div></div>
       <div class="sk-card reveal"><div class="sk-top"><div class="sk-icon sk-icon-t">&#128187;</div><span class="sk-name">Languages</span></div><div class="sk-pills"><span class="pill pill-t">Java</span><span class="pill pill-t">Kotlin</span><span class="pill pill-t">C</span><span class="pill pill-t">JavaScript</span></div></div>
     </div>
   </div>
@@ -263,51 +271,32 @@ footer{text-align:center;padding:2.5rem;border-top:1px solid var(--border);posit
         <div class="proj-header"><span class="proj-num">01 / 03</span><span class="proj-tag">Blockchain</span></div>
         <div class="proj-icon pi-v">&#9939;&#65039;</div>
         <h3 class="proj-name">Supply Chain System</h3>
-        <p class="proj-desc">A blockchain-based supply chain solution ensuring full transparency. Secure, immutable transaction tracking that improves trust and traceability across complex logistics networks.</p>
+        <p class="proj-desc">A blockchain-based supply chain management system ensuring transparent, traceable tracking of goods across a verifiable chain of custody.</p>
         <div class="proj-footer">
-          <div class="proj-techs"><span class="mini-pill">Java</span><span class="mini-pill">Blockchain</span><span class="mini-pill">Firebase</span></div>
+          <div class="proj-techs"><span class="mini-pill">PHP</span><span class="mini-pill">MySQL</span><span class="mini-pill">Blockchain</span></div>
           <a href="https://github.com/Shambhavi-35/blockchain-supply-chain" target="_blank" class="proj-link">View <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
         </div>
       </div>
       <div class="proj-card reveal">
-        <div class="proj-header"><span class="proj-num">02 / 03</span><span class="proj-tag proj-tag-teal">Game</span></div>
-        <div class="proj-icon pi-t">&#127918;</div>
-        <h3 class="proj-name">Tic Tac Toe</h3>
-        <p class="proj-desc">An interactive Tic Tac Toe Android game with polished UI, complete game logic, win condition detection, and smooth player interactions built natively for Android.</p>
+        <div class="proj-header"><span class="proj-num">02 / 03</span><span class="proj-tag">AI &amp; Agriculture</span></div>
+        <div class="proj-icon pi-v">&#127807;</div>
+        <h3 class="proj-name">Plant Disease Detection &amp; Agristore</h3>
+        <p class="proj-desc">A project combining plant disease detection with an agri-store concept — an early exploration at the intersection of AI and agriculture.</p>
         <div class="proj-footer">
-          <div class="proj-techs"><span class="mini-pill">Kotlin</span><span class="mini-pill">Android</span><span class="mini-pill">XML</span></div>
-          <a href="https://github.com/Shambhavi-35/Tic-Tac-Toe" target="_blank" class="proj-link">View <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+          <div class="proj-techs"><span class="mini-pill">OpenCV</span><span class="mini-pill">AI</span></div>
+          <a href="https://github.com/Shambhavi-35/Plant-disease-detection-and-agristore" target="_blank" class="proj-link">View <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
         </div>
       </div>
       <div class="proj-card reveal">
         <div class="proj-header"><span class="proj-num">03 / 03</span><span class="proj-tag proj-tag-rose">Android App</span></div>
         <div class="proj-icon pi-r">&#129504;</div>
         <h3 class="proj-name">Brain Trainer</h3>
-        <p class="proj-desc">A quiz-based Android app designed to train cognitive speed and accuracy. Features timer-based questions, dynamic scoring, and an engaging UX to keep users sharp.</p>
+        <p class="proj-desc">A Kotlin-based cognitive training app — an early step into building interactive, native Android experiences beyond basic CRUD screens.</p>
         <div class="proj-footer">
-          <div class="proj-techs"><span class="mini-pill">Java</span><span class="mini-pill">Android</span><span class="mini-pill">Firebase</span></div>
+          <div class="proj-techs"><span class="mini-pill">Kotlin</span><span class="mini-pill">Android</span></div>
           <a href="https://github.com/Shambhavi-35/braintrainer" target="_blank" class="proj-link">View <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<div class="hr"></div>
-
-<section id="github">
-  <div class="section-wrap">
-    <p class="s-label reveal">03 &mdash; Activity</p>
-    <h2 class="s-title reveal">GitHub <em>Stats</em></h2>
-    <div class="github-inner reveal">
-      <div class="github-text">
-        <h3>Always Learning,<br><em>Always Shipping</em></h3>
-        <p>Consistent commits, real projects, genuine curiosity. Every line of code is a step toward building something meaningful — from Android apps to blockchain systems.</p>
-        <a href="https://github.com/Shambhavi-35" target="_blank" class="btn-glow" style="font-size:0.85rem;padding:10px 24px">Open GitHub Profile</a>
-      </div>
-      <div class="github-imgs">
-        <img src="https://github-readme-stats.vercel.app/api?username=Shambhavi-35&show_icons=true&theme=transparent&hide_border=true&bg_color=00000000&title_color=a78bfa&icon_color=6c47ff&text_color=7070a0&ring_color=6c47ff" alt="GitHub Stats">
-        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Shambhavi-35&layout=compact&theme=transparent&hide_border=true&bg_color=00000000&title_color=a78bfa&text_color=7070a0" alt="Top Languages">
       </div>
     </div>
   </div>
@@ -317,21 +306,114 @@ footer{text-align:center;padding:2.5rem;border-top:1px solid var(--border);posit
 
 <section id="certs">
   <div class="section-wrap">
-    <p class="s-label reveal">04 &mdash; Credentials</p>
-    <h2 class="s-title reveal">Certifications &amp; <em>Achievements</em></h2>
+    <p class="s-label reveal">03 &mdash; Credentials</p>
+    <h2 class="s-title reveal">
+      Certifications &amp; <em>Achievements</em>
+    </h2>
+
     <div class="certs-grid">
-      <a href="https://www.theforage.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_69c13015d70b632cc9f45ffc_1774274733348_completion_certificate.pdf" target="_blank" class="cert-card reveal">
-        <div class="cert-emblem">&#128202;</div><div><p class="cert-title">Data Analytics Job Simulation</p><p class="cert-org">Forage</p></div><span class="cert-arrow">&#8599;</span>
-      </a>
-      <a href="https://unstop.com/certificate-preview/6dcdb24a-71be-458e-a680-8d933dddd788" target="_blank" class="cert-card reveal">
-        <div class="cert-emblem">&#127942;</div><div><p class="cert-title">Achievement Certificate I</p><p class="cert-org">Unstop</p></div><span class="cert-arrow">&#8599;</span>
-      </a>
-      <a href="https://unstop.com/certificate-preview/336233bf-07fc-4e33-9947-7ba241ba8e58" target="_blank" class="cert-card reveal">
-        <div class="cert-emblem">&#127894;</div><div><p class="cert-title">Achievement Certificate II</p><p class="cert-org">Unstop</p></div><span class="cert-arrow">&#8599;</span>
-      </a>
-      <a href="https://unstop.com/certificate-preview/d2632569-d73f-4676-8f86-0e51d23b5133" target="_blank" class="cert-card reveal">
-        <div class="cert-emblem">&#11088;</div><div><p class="cert-title">Achievement Certificate III</p><p class="cert-org">Unstop</p></div><span class="cert-arrow">&#8599;</span>
-      </a>
+
+      <!-- Google Cloud Engineering -->
+      <div class="cert-card reveal">
+        <div class="cert-emblem">&#9729;&#65039;</div>
+        <div>
+          <p class="cert-title">Google Cloud Engineering Certificate</p>
+          <p class="cert-org">Google Cloud</p>
+          <a href="https://www.credly.com/badges/16dfb57a-b537-4168-8d6b-2f72bfb1573c/public_url"
+             target="_blank"
+             class="cert-link">
+            🔗 View Certificate
+          </a>
+        </div>
+      </div>
+
+      <!-- Google Cloud Network -->
+      <div class="cert-card reveal">
+        <div class="cert-emblem">&#127919;</div>
+        <div>
+          <p class="cert-title">Develop Your Google Cloud Network — Skill Badge</p>
+          <p class="cert-org">Google Cloud</p>
+          <a href="https://www.credly.com/badges/a756914c-4dc6-4e20-a7ec-c095c60505c6/public_url"
+             target="_blank"
+             class="cert-link">
+            🔗 View Certificate
+          </a>
+        </div>
+      </div>
+
+      <!-- Kotlin -->
+      <div class="cert-card reveal">
+        <div class="cert-emblem">&#128241;</div>
+        <div>
+          <p class="cert-title">Mastering Kotlin for Android Development</p>
+          <p class="cert-org">Certificate of Completion</p>
+          <a href="https://www.linkedin.com/posts/shambhavi-shiragond_mastering-kotline-for-android-development-activity-7392479115385393152-qCnr?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAEyqvkgBIXVmESTsqPgKSEont8GvAkPpNp0&utm_campaign=copy_link"
+             target="_blank"
+             class="cert-link">
+            🔗 View Certificate
+          </a>
+        </div>
+      </div>
+
+      <!-- DSA -->
+      <div class="cert-card reveal">
+        <div class="cert-emblem">&#128202;</div>
+        <div>
+          <p class="cert-title">30 Days DSA Bootcamp</p>
+          <p class="cert-org">Certificate of Completion</p>
+          <a href="https://d8it4huxumps7.cloudfront.net/lambda-pdfs/certificate-images/d2632569-d73f-4676-8f86-0e51d23b5133.jpg"
+             target="_blank"
+             class="cert-link">
+            🔗 View Certificate
+          </a>
+        </div>
+      </div>
+
+      <!-- Lazarus Missions -->
+      <div class="cert-card reveal">
+        <div class="cert-emblem">&#127942;</div>
+        <div>
+          <p class="cert-title">The Lazarus Missions</p>
+          <p class="cert-org">Certificate of Participation</p>
+          <a href="https://d8it4huxumps7.cloudfront.net/lambda-pdfs/certificate-images/336233bf-07fc-4e33-9947-7ba241ba8e58.jpg"
+             target="_blank"
+             class="cert-link">
+            🔗 View Certificate
+          </a>
+        </div>
+      </div>
+
+      <!-- ChatGPT Bootcamp -->
+      <div class="cert-card reveal">
+        <div class="cert-emblem">&#129302;</div>
+        <div>
+          <p class="cert-title">Build a Website Using ChatGPT Bootcamp</p>
+          <p class="cert-org">Certificate of Participation</p>
+          <a href="https://www.linkedin.com/posts/shambhavi-shiragond_yhills-webdevelopment-ai-activity-7317860785546838017-lngR?utm_source=share&utm_medium=member_android&rcm=ACoAAEyqvkgBIXVmESTsqPgKSEont8GvAkPpNp0"
+             target="_blank"
+             class="cert-link">
+            🔗 View Certificate
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="hr"></div>
+
+<section id="education">
+  <div class="section-wrap">
+    <p class="s-label reveal">04 &mdash; Academics</p>
+    <h2 class="s-title reveal">Currently <em>Studying</em></h2>
+    <div class="edu-card reveal">
+      <div>
+        <div class="edu-degree">Bachelor of Engineering — Computer Science &amp; Engineering</div>
+        <div class="edu-school">East West Institute Of Technology</div>
+        <div class="edu-loc">Bengaluru, Karnataka, India</div>
+      </div>
+      <div class="edu-time">Sept 2023 &rarr; Sept 2027</div>
     </div>
   </div>
 </section>
@@ -343,7 +425,7 @@ footer{text-align:center;padding:2.5rem;border-top:1px solid var(--border);posit
     <div class="contact-hero">
       <p class="s-label reveal" style="justify-content:center">05 &mdash; Get in touch</p>
       <h2 class="s-title reveal">Let's <em>Connect</em></h2>
-      <p class="reveal">Focused on building impactful Android applications. Open to internships, collaborations, and exciting opportunities. Feel free to reach out!</p>
+      <p class="reveal">Looking forward to connecting with professionals, mentors, and peers in Android development. Open to internships, collaborations, and opportunities to learn — feel free to reach out!</p>
     </div>
     <div class="contact-grid reveal">
       <a href="mailto:shambhavishiragond223@gmail.com" class="contact-card">
@@ -368,11 +450,7 @@ footer{text-align:center;padding:2.5rem;border-top:1px solid var(--border);posit
 <footer>
   <div class="footer-inner">
     <span class="footer-logo">Shambhavi Shiragond</span>
-    <span class="footer-copy">&#169; 2025 &middot; Built for Vercel</span>
-    <a href="https://vercel.com" target="_blank" class="vercel-badge">
-      <svg width="14" height="14" viewBox="0 0 76 65" fill="currentColor"><path d="M37.5274 0L75.0548 65H0L37.5274 0Z"/></svg>
-      Deploy on Vercel
-    </a>
+    <span class="footer-copy">&#169; 2026 &middot; Bengaluru, Karnataka, India</span>
   </div>
 </footer>
 
